@@ -1,0 +1,25 @@
+ion-toolbar{
+    --ion-safe-area-bottom:.3rem;
+    --ion-safe-area-top:.3rem;
+    ion-title{
+        h1{
+            display: inline-block;
+            position: relative;
+            margin: 0;
+            bottom: .7rem;
+            left: 1rem;
+        }
+        img{
+            width: 2.5rem;
+        }
+    }
+}
+
+ion-content{
+    ion-button{
+        position: relative;
+        left: 50%;
+        transform: translate(-50%);
+        border-radius: 100px;
+    }
+}

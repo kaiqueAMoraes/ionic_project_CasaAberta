@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-toolbar>
+
+    <ion-title><img src="./assets/images/logo.png" alt=""><h1>Instagram</h1></ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="formularioLogin" (ngSubmit)="login(formularioLogin.value)">
+  <ion-item>
+    <ion-label position="stacked">E-mail</ion-label>
+    <ion-input inputmode="email" formControlName="email" type="email" required="true"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="stacked">Senha</ion-label>
+    <ion-input inputmode="password" formControlName="password" type="password" required="true"></ion-input>
+  </ion-item>
+  <ion-button color="success" type="submit">Entrar</ion-button>
+  </form>
+</ion-content>
