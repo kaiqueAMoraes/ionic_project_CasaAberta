@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import {NavController} from '@ionic/angular';
 import {FormBuilder} from '@angular/forms';
+import { UsuarioService } from '../services/usuario/usuario.service';
 
 @Component({
   selector: 'app-login',
