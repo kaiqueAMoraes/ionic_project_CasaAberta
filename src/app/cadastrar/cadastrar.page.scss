@@ -1,0 +1,22 @@
+ion-header{
+    ion-toolbar{
+        --ion-safe-area-bottom:.3rem;
+        --ion-safe-area-top:.3rem;
+        ion-title{
+            margin: 0;
+            padding: 0;
+        }
+    }
+}
+
+ion-content{
+   
+    img{
+        position: relative;
+        top: 2rem;
+        left: 50%;
+        transform: translate(-50%);
+        width: 50%;
+    } 
+   
+}
