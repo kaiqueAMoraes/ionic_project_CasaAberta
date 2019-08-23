@@ -3,31 +3,37 @@
       <ion-buttons slot="start">
           <ion-back-button defaultHref="/"></ion-back-button>
         </ion-buttons>
-    <ion-title>cadastrar</ion-title>
+    <ion-title>cadastro</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>  
-    
-    <form action="">
-        
-    </form>
+<ion-content>             
+    <form [formGroup]="formularioCadastrar" (ngSubmit)="cadastrar(formularioCadastrar.value)">
         <ion-grid>
-          <ion-row>
+          <ion-row style="height: 450px;">
               <ion-col size=12>
                   <img src="./assets/images/logo.png" alt="">
               </ion-col>
               <ion-col size=12>
                   <ion-item>
                       <ion-label position="stacked">Nome</ion-label>
-                      <ion-input inputmode="email"  type="email" required="true"></ion-input>
+                      <ion-input inputmode="nome"  type="email" required="true" formControlName="nome"></ion-input>
                   </ion-item>
                   <ion-item>
                       <ion-label position="stacked">E-mail</ion-label>
-                      <ion-input inputmode="email"  type="email" required="true"></ion-input>
+                      <ion-input inputmode="email"  type="email" required="true" formControlName="email"></ion-input>
                   </ion-item>
+                  <ion-item>
+                    <ion-label position="stacked">Senha</ion-label>
+                    <ion-input inputmode="email"  type="password" required="true" formControlName="senha"></ion-input>
+                </ion-item>
               </ion-col>
           </ion-row>
         </ion-grid>
+  <ion-button color="success" type="submit" [disabled]="formularioCadastrar.invalid">Cadastrar</ion-button>
+
+  </form>
+
+  
     
 </ion-content>

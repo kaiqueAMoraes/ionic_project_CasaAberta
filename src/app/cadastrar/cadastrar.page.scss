@@ -10,7 +10,12 @@ ion-header{
 }
 
 ion-content{
-   
+    ion-button{
+        position: relative;
+        left: 50%;
+        transform: translate(-50%);
+        border-radius: 100px;
+    }
     img{
         position: relative;
         top: 2rem;

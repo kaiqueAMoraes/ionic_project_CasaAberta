@@ -15,8 +15,8 @@
     <ion-label position="stacked">Senha</ion-label>
     <ion-input inputmode="password" formControlName="password" type="password" required="true"></ion-input>
   </ion-item>
-  <ion-button color="success" type="submit" >Entrar</ion-button>
+  <ion-button color="success" type="submit" [disabled]="formularioLogin.invalid">Entrar</ion-button>
   </form>
 
-  <ion-button fill="clear" type="button" (click)="cadastrar()" >Cadastrar</ion-button>
+  <ion-button fill="clear" type="button" (click)="cadastrar()"  >Cadastrar</ion-button>
 </ion-content>
