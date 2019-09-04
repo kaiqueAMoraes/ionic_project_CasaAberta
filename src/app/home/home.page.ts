@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { NavController } from '@ionic/angular';
+import { Storage } from '@ionic/storage';
 
 @Component({
   selector: 'app-home',
@@ -7,9 +9,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomePage implements OnInit {
 
-  constructor() { }
+  usuario: any = "";
+
+  constructor(private storage: Storage, private navCtrl: NavController) { }
 
   ngOnInit() {
+    this.storage.get("usuario").then((dados) => {
+      this.usuario = dados;
+      //console.log(dados);
+    });
+  }
+  sair() {
+    this.storage.clear();
+    this.navCtrl.navigateRoot("/");
+  }
+
+  eventos() {
+    this.navCtrl.navigateForward("/eventos");
   }
 
 }

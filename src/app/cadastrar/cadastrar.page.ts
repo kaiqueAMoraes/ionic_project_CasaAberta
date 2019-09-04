@@ -34,7 +34,7 @@ export class CadastrarPage {
       console.log(dados);
 
       if (dados.sucesso) {
-        this.navController.navigateForward("/");
+        this.navController.navigateRoot("/");
       } else {
         alert("Erro no cadastro de usuario");
       }

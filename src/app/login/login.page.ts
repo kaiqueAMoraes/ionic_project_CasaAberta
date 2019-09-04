@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { NavController } from '@ionic/angular';
 import { FormBuilder } from '@angular/forms';
 import { UsuarioService } from '../services/usuario/usuario.service';
+import { Storage } from '@ionic/storage';
+import { ToastController } from '@ionic/angular';
 
 @Component({
   selector: 'app-login',
@@ -12,13 +14,21 @@ export class LoginPage {
 
   formularioLogin;
 
-  constructor(private navController: NavController, private usuarioService: UsuarioService, private formBuilder: FormBuilder) {
+  constructor(private toastController: ToastController, private navCtrl: NavController, private formBuilder: FormBuilder, private usuarioService: UsuarioService, private storage: Storage) { 
+
     this.formularioLogin = this.formBuilder.group({
       email: "",
       password: ""
     });
   }
 
+  async presentToast() {
+    const toast = await this.toastController.create({
+      message: 'Usuário não encontrado!',
+      duration: 10000
+    });
+    toast.present();
+  }
 
   login(dadosLogin: any) {
 
@@ -30,9 +40,11 @@ export class LoginPage {
       console.log(data);
 
       if (data.sucesso) {
-        this.navController.navigateForward("/home");
+        this.storage.set("usuario", data.usuario).then(() => {
+          this.navCtrl.navigateRoot("/home");
+        });
       }else{
-        alert("Usuario não encontrado");
+        this.presentToast();
       }
     })
 
@@ -42,7 +54,7 @@ export class LoginPage {
   }
 
   cadastrar() {
-    this.navController.navigateForward("/cadastrar");
+    this.navCtrl.navigateForward("/cadastrar");
   }
 
 }
