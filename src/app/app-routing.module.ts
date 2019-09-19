@@ -11,7 +11,8 @@ const routes: Routes = [
   { path: 'cadastrar', loadChildren: './cadastrar/cadastrar.module#CadastrarPageModule' },
   { path: 'home', loadChildren: './home/home.module#HomePageModule' },
   { path: 'eventos', loadChildren: './eventos/eventos.module#EventosPageModule' },
-  { path: '**', loadChildren: './erro/erro.module#ErroPageModule' }
+  { path: '**', loadChildren: './erro/erro.module#ErroPageModule' },
+  { path: 'plugin', loadChildren: './plugin/plugin.module#PluginPageModule' }
 ];
 @NgModule({
   imports: [
